@@ -18,7 +18,7 @@ public class LinkedListDemo {
          * 1. Read through the LinkedList and Node classes.
          * 
          * 2. Create a LinkedList of any type you like.
-         * 
+        
          * 3. Try using some LinkedList methods to add, remove and print a few
          * elements.
          * 
@@ -31,7 +31,17 @@ public class LinkedListDemo {
          * String nodes.
          * 
          */
-
+    	LinkedList<Integer> list=new LinkedList<Integer>();
+    	list.add(1);
+    	list.add(2);
+    
+    	Node<Integer> node=list.getHead();
+    	for(int i=0; i<list.size(); i++) {
+    	
+   node.setValue(node.getValue()*2);
+   System.out.println(node.getValue());
+    	node=node.getNext();
+    	}
     }
 
 }
