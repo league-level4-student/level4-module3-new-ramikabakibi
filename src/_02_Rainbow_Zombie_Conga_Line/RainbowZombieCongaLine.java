@@ -33,7 +33,11 @@ public class RainbowZombieCongaLine {
 
     // Make the passed in zombie the first Zombie in the conga line!
     public void engine(Zombie dancer) {
-
+    	if(congaLine.getHead()!=null) {
+    		//IDK HOW TO SET THIS EQUAL TO HEAD, START ON THIS AND TRY AND FIGURE IT OUT
+    		//MAYBE WILL NEED A REFRESHER ON HOW LINKLED LISTS WORK WITH THE HEAD AND STUFF
+    		
+    	}
     }
 
     // Make the passed in zombie the last Zombie in the conga line!

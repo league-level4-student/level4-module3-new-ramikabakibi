@@ -21,6 +21,9 @@ public class TrainCar {
         return "Nice to meet you. My name is " + passenger + ". Hmm... a "
                 + object + "? I saw " + evidence + ".";
     }
+    String getEvidence() {
+    	return evidence;
+    }
 
     @Override
     public String toString() {
