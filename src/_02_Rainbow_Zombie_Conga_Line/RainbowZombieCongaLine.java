@@ -100,8 +100,14 @@ public class RainbowZombieCongaLine {
     	Node<Zombie> endZombie=new Node<Zombie>(new Zombie(dancer.getZombieHatColor()));
     	Node<Zombie>head=congaLine.getHead();
     	headZombie.setNext(head);
-    	congaLine.setHead(headZombie);
     	head.setPrev(headZombie);
+    	congaLine.setHead(headZombie);
+    	Node<Zombie> tail=congaLine.getTail();
+    	endZombie.setPrev(tail);
+    	congaLine.setTail(endZombie);
+    	tail.setNext(endZombie);
+    	middleZombie.setNext(head.getNext());
+    	head.setNext(middleZombie);
     	//DO SIMILAR THING FOR END AND THEN MIDDLE THING IS DIFFERENT 
     }
 
@@ -110,7 +116,23 @@ public class RainbowZombieCongaLine {
      * color to the end of the line.
      */
     public void rainbowBrains(Zombie dancer) {
-
+    	Node<Zombie> headZombie=new Node<Zombie>(dancer);
+    	Node<Zombie> head=congaLine.getHead();
+    	headZombie.setNext(head);
+    	if(head!=null) {
+    	head.setPrev(headZombie);
+    	}
+    	else {
+    		congaLine.setTail(headZombie);
+    	}
+    	congaLine.setHead(headZombie);
+    	for(int i=0; i<zombieHats.length; i++) {
+    		Node<Zombie> hi=new Node<Zombie>(new Zombie(zombieHats[i]));
+    		Node<Zombie> tail=congaLine.getTail();
+    		hi.setPrev(tail);
+    		tail.setNext(hi);
+    		congaLine.setTail(hi);
+    	}
     }
 
     public LinkedList<Zombie> getCongaLine() {
