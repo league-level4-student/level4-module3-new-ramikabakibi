@@ -1,7 +1,8 @@
 package _03_Intro_to_Binary_Trees;
 
 public class BinaryTreeDemo {
-
+	static BinaryTree<Integer> tree=new BinaryTree<Integer>();
+	static Node<Integer> daRoot=tree.getRoot();
     /*
      * A Binary Tree is a data structure that makes use of nodes and references
      * like a LinkedList, but instead of the nodes pointing to a previous node
@@ -33,7 +34,25 @@ public class BinaryTreeDemo {
      */
 
     public static void main(String[] args) {
+    	
+      	tree.insert(4);
+    	tree.insert(3);
+    	tree.insert(5);
+    	tree.insert(1);
+    	multiply(tree.getRoot());
+    	tree.printVertical();
 
+    
+    }
+    public static void multiply(Node<Integer> current) {
+    	current.setValue(current.getValue()*2);
+    	if(current.getLeft()!=null) {
+    		multiply(current.getLeft());
+    	}
+    	if(current.getRight()!=null) {
+    		multiply(current.getRight());
+    	}
+    	
     }
 
 }
