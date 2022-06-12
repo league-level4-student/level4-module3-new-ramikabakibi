@@ -49,7 +49,7 @@ public class MorseDecoder {
         mcTree.insert(new MorseCode("z", "--.."));
         mcTree.insert(new MorseCode("q", "--.-"));
 
-      //  mcTree.printVertical();
+       mcTree.printVertical();
 
     }
 
@@ -70,11 +70,16 @@ public class MorseDecoder {
     		return current.getValue().getDecoded();
     	}
     	if(current.getLeft()!=null) {
-    		return decode(current.getLeft(), value);
-    		
+    		String decodeCall= decode(current.getLeft(), value);
+    		if(decodeCall!="") {
+    			return decodeCall;
+    		}
     	}
     	if(current.getRight()!=null) {
-    		return decode(current.getRight(), value);
+    		String decodedCall= decode(current.getRight(), value);
+    		if(decodedCall!="") {
+    			return decodedCall;
+    		}
     	}
     	return "";
     }
