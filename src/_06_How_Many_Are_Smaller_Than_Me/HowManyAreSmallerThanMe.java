@@ -25,8 +25,12 @@ public class HowManyAreSmallerThanMe {
     	if(current.getValue()<value) {
     		smaller+=1;
     	}
-    	else {
-    		iterate(current.getLeft(), value);
+    	if(current.getLeft()!=null) {
+    		smaller+=iterate(current.getLeft(), value);
+    		
+    	}
+    	if(current.getRight()!=null) {
+    		smaller+=iterate(current.getRight(), value);
     	}
     	return smaller;
     }
